@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>eae8c97a-25c3-4925-a04e-743ac7e6978a</ID>
+  <Name>Zack Flashback Dynamic Weapon Fix</Name>
+  <Version>1.0</Version>
+  <Author>Gabrié</Author>
+  <Category>Field Models</Category>
+  <Description>Forces a swordless Cloud model during the Zack flashback, hence preventing duplicate swords when Dynamic Weapon is enabled.
+
+Important: place this mod before (above) any other Field Model mod, such as "Ninostyle Chibi" and "ChaOS".</Description>
+
+  <ModFolder Folder="no change" ActiveWhen="FlashbackFix = 0" />
+  <Conditional Folder="BaseCloud" ActiveWhen="FlashbackFix = 1">
+    <RuntimeVar Var="FieldID" Values="782" />
+  </Conditional>
+
+  <ConfigOption>
+    <Type>List</Type>
+    <Default>1</Default>
+    <ID>FlashbackFix</ID>
+    <Name>Swordless Cloud flashback</Name>
+    <Description>Enable swordless Cloud during Zack flashback</Description>
+    <Option Value="0" Name="No Change" PreviewFile="no_change.png"/>
+    <Option Value="1" Name="On" PreviewFile="on.png"/>
+  </ConfigOption>
+  
+  <OrderConstraints>
+    <Before>2b25060c-c60e-426e-ac46-f85439e903e2</Before>
+    <Before>7d42b459-ce44-40cc-b4b2-4ba6301538d4</Before>
+    <Before>d7b6bcc6-2f87-4733-8191-548e17118457</Before>
+    <Before>3b25060c-c60e-426e-ac46-f85479e983e5</Before>
+    <Before>2b25060c-c60e-426e-ac46-f85439e903e9</Before>
+  </OrderConstraints>
+
+</ModInfo>
